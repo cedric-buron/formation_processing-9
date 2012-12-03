@@ -1,0 +1,39 @@
+zoom 116
+speed 1
+center -1.69263 0.520222
+rotate 0 0 0
+autosize 1
+add curve 2
+setpos current -1 1 0
+setpointat current  0  0 0 0  0 0 0  0 0 0
+setpointat current  1  2 0 0  0 0 0  0 0 0
+setpointat current  2  2 -2 0  0 0 0  0 0 0
+setpointat current  3  0 -2 0  0 0 0  0 0 0
+setpointat current  4  0 0 0  0 0 0  0 0 0
+add cursor 3
+setcurve current lastCurve
+setpattern current 0 0 1
+settimepercent current 0.729613
+setsize current 1.2
+setmessage current 20, osc://127.0.0.1:57120/trigger ,
+
+add trigger 1
+setpos current -1 -1 0
+setgroup current T1
+setmessage current 1, osc://ip_out:8000/trigger trigger_xPos trigger_yPos ,
+
+add trigger 4
+setpos current -1 1 0
+setgroup current T1
+setmessage current 1, osc://ip_out:8000/trigger trigger_xPos trigger_yPos ,
+
+add trigger 5
+setpos current 1 1 0
+setgroup current T1
+setmessage current 1, osc://ip_out:8000/trigger trigger_xPos trigger_yPos ,
+
+add trigger 6
+setpos current 1 -1 0
+setgroup current T1
+setmessage current 1, osc://ip_out:8000/trigger trigger_xPos trigger_yPos ,
+
