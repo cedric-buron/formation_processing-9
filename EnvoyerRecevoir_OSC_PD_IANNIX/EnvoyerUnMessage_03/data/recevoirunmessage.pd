@@ -1,4 +1,4 @@
-#N canvas 616 121 952 686 12;
+#N canvas 488 121 952 686 12;
 #X declare -lib mrpeach;
 #X obj -96 121 pipelist;
 #X obj -96 94 unpackOSC;
@@ -79,6 +79,9 @@
 #X obj 112 388 *~;
 #X obj 94 328 * 10;
 #X obj 99 434 *~ 1;
+#X text 267 175 recuperation des deux elements de varisound extraction
+et injection dans un synthé fm modulé par le kick et le snare précédent
+;
 #X connect 0 0 10 0;
 #X connect 1 0 0 0;
 #X connect 1 1 0 1;

@@ -1,3 +1,9 @@
+/* le programme suivant recupere en plus 
+la position de la sourie 
+et l'envoie au programme ecoutant le label /varisound sur le port 8000
+*/
+
+
 import oscP5.*;
 import netP5.*;
 Boolean switchOsc = false;
