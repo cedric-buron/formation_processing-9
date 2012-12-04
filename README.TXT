@@ -1,5 +1,5 @@
 Voici les supports de la formation #9 au CRAS sur Processing et particulierement sur la communication entre logiciel via OSC 
-Les patches pure data ou iannix associés a chaque programme processing se trouvent dans le repertoire data du programme processing respectif.
+Les patches pure data ou iannix associés a chaque programme processing se trouvent dans le repertoire data du programme.
 
 POUR UTILISER CES PATCHES : 
 
