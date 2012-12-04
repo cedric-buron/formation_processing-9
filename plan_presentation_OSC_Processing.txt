@@ -1,0 +1,12 @@
+﻿Plan de la présentation :
+
+Généralités Processing, interfaçage avec l'exterieur
+Généralités OSC
+Présentation d'OSC
+Présentation de Pure Data
+Utilisation d'OSC
+Communication avec Pure Data
+Présentation de Iannix 
+Communication avec Iannix
+Processing et Midi (workaround)
+

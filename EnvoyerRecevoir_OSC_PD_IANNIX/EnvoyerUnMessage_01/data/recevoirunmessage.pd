@@ -1,4 +1,4 @@
-#N canvas 201 45 952 686 12;
+#N canvas 450 317 952 686 12;
 #X declare -lib mrpeach;
 #X obj -96 121 pipelist;
 #X obj -96 94 unpackOSC;
@@ -66,7 +66,15 @@
 #X obj -118 345 dac~;
 #X obj -78 23 import mrpeach;
 #X obj -96 149 routeOSC /boum /tchack;
-#X text 222 60 comment;
+#X text 31 23 import de la librairie OSC;
+#X text 19 64 ecoute des messages UDP rentrant sur le port 8000;
+#X text -21 94 Conversion UDP -> OSC;
+#X text 77 149 routing en fonction de l'adresse;
+#X text 13 281 caisse claire;
+#X text -266 283 grosse caisse;
+#X obj -295 40 loadbang;
+#X msg -295 71 \; pd dsp 1;
+#X text -398 39 compute audio;
 #X connect 0 0 11 0;
 #X connect 1 0 0 0;
 #X connect 1 1 0 1;
@@ -81,3 +89,4 @@
 #X connect 11 0 5 0;
 #X connect 11 1 4 0;
 #X connect 11 1 6 0;
+#X connect 18 0 19 0;

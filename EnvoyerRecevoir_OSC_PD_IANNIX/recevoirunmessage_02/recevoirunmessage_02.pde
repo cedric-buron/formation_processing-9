@@ -6,7 +6,7 @@ JitterBug bug[]= new JitterBug[NUM_BUG]; // Declare object
 JitterBug bug1; // Declare object
 color c1 = color(0, 0, 0);
 color c2;
-float spd,angl,decalageX,decalageY;
+float speed,angle,decalageX,decalageY;
 
 OscP5 oscP5;
 NetAddress myRemoteLocation;
@@ -33,20 +33,13 @@ void oscEvent(OscMessage theOscMessage) {
   String adress = theOscMessage.addrPattern();
   
   if (adress.equals("/slider1")) {
-      println("slider 1");
-      println("value : "+theOscMessage.get(0).intValue());
-      spd = float(theOscMessage.get(0).intValue())/127.0*10;
-      println(spd);
+      speed = float(theOscMessage.get(0).intValue())/127.0*10;
   } else if(adress.equals("/slider2")) {
-      println("slider 2");
-      println("value : "+theOscMessage.get(0).intValue());
-      angl = float(theOscMessage.get(0).intValue())/127.0*PI*2;
-  } else {
-      println("trigger : "+adress);
-      println(theOscMessage.get(0).floatValue()+" : "+theOscMessage.get(1).floatValue());
+      angle = float(theOscMessage.get(0).intValue())/127.0*PI*2;
+  } else if (adress.equals("/trigger")) {
       decalageX = theOscMessage.get(0).floatValue();
       decalageY = theOscMessage.get(1).floatValue();
-      spd=1;      
+      speed=1;      
   };
   
 }
@@ -61,9 +54,9 @@ void draw() {
     translate(width/2,height/2); 
     pushMatrix();
     
-    rotate(angl);
+    rotate(angle);
   for(int i=0;i<NUM_BUG;i++) {
-    bug[i].move(spd);
+    bug[i].move(speed);
     bug[i].display();
   }
   
@@ -76,7 +69,7 @@ void draw() {
   float y;
   int diameter;
   color c;
-  float speed = 1;
+  float bugSpeed = 1;
   
   JitterBug(float tempX, float tempY, int tempDiameter, color col) {
     x = tempX;
@@ -86,9 +79,9 @@ void draw() {
   }
   
   void move(float newSpeed) {
-    speed = newSpeed;
-    x += random(-speed, speed)+decalageX/2;
-    y += random(-speed, speed)+decalageY/2;
+    bugSpeed = newSpeed;
+    x += random(-bugSpeed, bugSpeed)+decalageX/2;
+    y += random(-bugSpeed, bugSpeed)+decalageY/2;
   }
   
   void display() {
